@@ -1,45 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Template appcast for auto_updater / WinSparkle.
-
-  Release flow:
-    1. Bump `version:` in pubspec.yaml (this becomes the .exe's FILEVERSION,
-       which is what WinSparkle compares against sparkle:version below).
-    2. flutter build windows --release
-    3. Compile windows/packaging/script_ib.iss -> ibrokersetup.exe
-       (keep #define MyAppVersion in script_ib.iss in sync with pubspec too)
-    4. Copy this file, fill in <title>/<description>/<pubDate>/sparkle:version
-       for the new release.
-    5. Create a GitHub release in bvsc-vn/ibroker_desktop_releases tagged
-       with the version, uploading both ibrokersetup.exe and appcast.xml
-       as release assets:
-         gh release create v1.0.157 ibrokersetup.exe appcast.xml \
-           -R bvsc-vn/ibroker_desktop_releases -t "iBroker 1.0.157"
-       "latest" release marks whichever release isn't a draft/pre-release,
-       so the .../releases/latest/download/... URL always resolves here.
-
-  WinSparkle runs the downloaded installer with the "/SILENT" switch, which
-  Inno Setup understands natively -- no extra install-command config needed.
--->
+﻿<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
   <channel>
     <title>iBroker Desktop Updates</title>
     <link>https://github.com/bvsc-vn/ibroker_desktop_releases</link>
     <description>Update feed for iBroker desktop</description>
     <item>
-      <title>Version 1.0.174</title>
-      <description>
-        <![CDATA[
-          <ul>
-            <li>Ghi chú thay đổi cho bản này</li>
-          </ul>
-        ]]>
-      </description>
-      <pubDate>Tue, 25 Aug 2026 00:00:00 +0700</pubDate>
+      <title>Version 1.0.176</title>
+      <description><![CDATA[
+        <ul>
+          <li>Ban thu nghiem auto-update</li>
+        </ul>
+      ]]></description>
+      <pubDate>Mon, 07 Sep 2026 14:58:02 +0700</pubDate>
       <enclosure
         url="https://github.com/bvsc-vn/ibroker_desktop_releases/releases/latest/download/ibrokersetup.exe"
-        sparkle:version="1.0.174"
-        length="0"
+        sparkle:version="1.0.176"
+        sparkle:dsaSignature="MEYCIQC+4Pe2tSbJlSq6F5W06ZorIbe8fqiaI01FMGwUzEo80wIhAKnLVvQ+hrLG3+/B/ojUEnUWVcOLlIu+B9XWTcVNpDyc"
+        length="54880195"
         type="application/octet-stream" />
     </item>
   </channel>
